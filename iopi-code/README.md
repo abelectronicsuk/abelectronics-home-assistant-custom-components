@@ -1,4 +1,5 @@
 This program controls the functions of the Microchip MCP23017 I2C based IO controller used on the IO Pi, IO Pi Plus or IO Pi Zero from AB Electronics UK.  If no options are specified iopi will read port 0 from I2C address 0x20.
+
 iopi command arguments
 
 -a --address=i2c address; e.g., '-a 0x21' sets the I2C address to 0x21; The default address if -a is not specified is 0x20
