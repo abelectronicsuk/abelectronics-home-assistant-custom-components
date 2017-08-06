@@ -1,0 +1,64 @@
+- platform: command_line
+  name: iopi_input_one
+  command: '/home/homeassistant/.homeassistant/./iopi -a 0x20 -u 1 -n 1 -d 1 -r -i 1'
+  device_class: power
+  payload_on: 1
+  payload_off: 0
+  scan_interval: 1
+
+- platform: command_line    
+  name: iopi_input_two
+  command: '/home/homeassistant/.homeassistant/./iopi -a 0x20 -u 1 -n 2 -d 1 -r -i 1'
+  device_class: power
+  payload_on: 1
+  payload_off: 0
+  friendly_name: IO Pi 2
+  scan_interval: 1
+
+- platform: command_line
+  name: iopi_input_three
+  command: '/home/homeassistant/.homeassistant/./iopi -a 0x20 -u 1 -n 3 -d 1 -r -i 1'
+  device_class: power
+  payload_on: 1
+  payload_off: 0
+  scan_interval: 1  
+
+- platform: command_line
+  name: iopi_input_four
+  command: '/home/homeassistant/.homeassistant/./iopi -a 0x20 -u 1 -n 4 -d 1 -r -i 1'
+  device_class: power
+  payload_on: 1
+  payload_off: 0
+  scan_interval: 1 
+
+- platform: command_line
+  name: iopi_input_five
+  command: '/home/homeassistant/.homeassistant/./iopi -a 0x20 -u 1 -n 5 -d 1 -r -i 1'
+  device_class: power
+  payload_on: 1
+  payload_off: 0
+  scan_interval: 1 
+
+- platform: command_line
+  name: iopi_input_six
+  command: '/home/homeassistant/.homeassistant/./iopi -a 0x20 -u 1 -n 6 -d 1 -r -i 1'
+  device_class: power
+  payload_on: 1
+  payload_off: 0
+  scan_interval: 1  
+
+- platform: command_line
+  name: iopi_input_seven
+  command: '/home/homeassistant/.homeassistant/./iopi -a 0x20 -u 1 -n 7 -d 1 -r -i 1'
+  device_class: power
+  payload_on: 1
+  payload_off: 0
+  scan_interval: 1 
+
+- platform: command_line
+  name: iopi_input_eight
+  command: '/home/homeassistant/.homeassistant/./iopi -a 0x20 -u 1 -n 8 -d 1 -r -i 1'
+  device_class: power
+  payload_on: 1
+  payload_off: 0
+  scan_interval: 1  

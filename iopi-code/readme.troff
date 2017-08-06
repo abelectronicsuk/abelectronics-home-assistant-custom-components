@@ -1,0 +1,21 @@
+.\" Manpage for iopi.
+.\" Contact sales@abelectronics.co.uk to correct errors or typos.
+.TH man 8 "06 May 2010" "1.0" "nuseradd man page"
+.SH NAME
+iopi - MCP23017 interface
+.SH SYNOPSIS
+iopi [OPTION]...
+.SH DESCRIPTION
+.B iopi
+controls the functions of the Microchip MCP23017 I2C based IO controller used on the IO Pi, IO Pi Plus or IO Pi Zero from AB Electronics UK.  If no options are specified iopi will read port 0 from I2C address 0x20.
+.SH OPTIONS
+.TP
+.BR \-a ", " \-\-address =\fIBITS\fR
+Set the number of bits to modify.
+
+
+
+.SH BUGS
+No known bugs.
+.SH AUTHOR
+Andrew Dorey (sales@abelectronics.co.uk)
