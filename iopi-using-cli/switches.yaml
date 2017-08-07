@@ -1,0 +1,50 @@
+- platform: command_line
+  switches:
+    iopi_pin_one:
+      command_on: '/home/homeassistant/.homeassistant/./iopi -a 0x21 -n 1 -d 0 -w 1'
+      command_off: '/home/homeassistant/.homeassistant/./iopi -a 0x21 -n 1 -d 0 -w 0'
+      command_state: '/home/homeassistant/.homeassistant/./iopi -a 0x21 -n 1 -d 0 -r'
+      value_template: '{{ value == "1" }}'
+      friendly_name: IO Pi 1
+    iopi_pin_two:
+      command_on: '/home/homeassistant/.homeassistant/./iopi -a 0x21 -n 2 -d 0 -w 1'
+      command_off: '/home/homeassistant/.homeassistant/./iopi -a 0x21 -n 2 -d 0 -w 0'
+      command_state: '/home/homeassistant/.homeassistant/./iopi -a 0x21 -n 2 -d 0 -r'
+      value_template: '{{ value == "1" }}'
+      friendly_name: IO Pi 2
+    iopi_pin_three:
+      command_on: '/home/homeassistant/.homeassistant/./iopi -a 0x21 -n 3 -d 0 -w 1'
+      command_off: '/home/homeassistant/.homeassistant/./iopi -a 0x21 -n 3 -d 0 -w 0'
+      command_state: '/home/homeassistant/.homeassistant/./iopi -a 0x21 -n 3 -d 0 -r'
+      value_template: '{{ value == "1" }}'
+      friendly_name: IO Pi 3
+    iopi_pin_four:
+      command_on: '/home/homeassistant/.homeassistant/./iopi -a 0x21 -n 4 -d 0 -w 1'
+      command_off: '/home/homeassistant/.homeassistant/./iopi -a 0x21 -n 4 -d 0 -w 0'
+      command_state: '/home/homeassistant/.homeassistant/./iopi -a 0x21 -n 4 -d 0 -r'
+      value_template: '{{ value == "1" }}'
+      friendly_name: IO Pi 4
+    iopi_pin_five:
+      command_on: '/home/homeassistant/.homeassistant/./iopi -a 0x21 -n 5 -d 0 -w 1'
+      command_off: '/home/homeassistant/.homeassistant/./iopi -a 0x21 -n 5 -d 0 -w 0'
+      command_state: '/home/homeassistant/.homeassistant/./iopi -a 0x21 -n 5 -d 0 -r'
+      value_template: '{{ value == "1" }}'
+      friendly_name: IO Pi 5
+    iopi_pin_six:
+      command_on: '/home/homeassistant/.homeassistant/./iopi -a 0x21 -n 6 -d 0 -w 1'
+      command_off: '/home/homeassistant/.homeassistant/./iopi -a 0x21 -n 6 -d 0 -w 0'
+      command_state: '/home/homeassistant/.homeassistant/./iopi -a 0x21 -n 6 -d 0 -r'
+      value_template: '{{ value == "1" }}'
+      friendly_name: IO Pi 6
+    iopi_pin_seven:
+      command_on: '/home/homeassistant/.homeassistant/./iopi -a 0x21 -n 7 -d 0 -w 1'
+      command_off: '/home/homeassistant/.homeassistant/./iopi -a 0x21 -n 7 -d 0 -w 0'
+      command_state: '/home/homeassistant/.homeassistant/./iopi -a 0x21 -n 7 -d 0 -r'
+      value_template: '{{ value == "1" }}'
+      friendly_name: IO Pi 7
+    iopi_pin_eight:
+      command_on: '/home/homeassistant/.homeassistant/./iopi -a 0x21 -n 8 -d 0 -w 1'
+      command_off: '/home/homeassistant/.homeassistant/./iopi -a 0x21 -n 8 -d 0 -w 0'
+      command_state: '/home/homeassistant/.homeassistant/./iopi -a 0x21 -n 8 -d 0 -r'
+      value_template: '{{ value == "1" }}'
+      friendly_name: IO Pi 8     

@@ -1,0 +1,35 @@
+# REPLACE HOME PAGE
+  default_view:
+    name: Home
+    view: yes
+    icon: mdi:home
+    entities:
+      - group.mainview
+     
+  
+  mainview:
+    view: no
+    name: Overview
+    entities:
+    
+     
+  adcpioutputs:
+    view: no
+    name: ADC Pi Inputs
+    control: hidden
+    entities:
+      - sensor.adcinput1
+      - sensor.adcinput2
+      - sensor.adcinput3
+      - sensor.adcinput4
+      - sensor.adcinput5
+      - sensor.adcinput6
+      - sensor.adcinput7
+      - sensor.adcinput8
+  
+  # Raspberry Pi BoardsTAB
+  RaspberryPiBoards:
+    view: yes
+    name: "Raspberry Pi Boards"
+    entities:
+      - group.adcpioutputs
