@@ -2,7 +2,7 @@
 Support for ADC Pi 8 channel ADC from www.ablectronics.co.uk.
 
 For more details about this board, please refer to the documentation at
-https://www.ablectronics.co.uk
+https://www.abelectronics.co.uk/kb/section/4/adc-pi
 """
 import asyncio
 from datetime import timedelta
@@ -19,6 +19,7 @@ from homeassistant.const import CONF_NAME
 from homeassistant.util import Throttle
 
 _LOGGER = logging.getLogger(__name__)
+
 CONF_I2C_BUS = 'i2c_bus'
 CONF_I2C_ADDRESS1 = 'i2c_address'
 CONF_I2C_ADDRESS2 = 'i2c_address2'
@@ -264,7 +265,6 @@ class ADCPi:
         4 = 4x
         8 = 8x
         """
-
         if gain == 1:
             # bit 0 = 0, bit 1 = 0
             self.__adc1_conf = self.__adc1_conf & ~(1 << 0) & ~(1 << 1)
