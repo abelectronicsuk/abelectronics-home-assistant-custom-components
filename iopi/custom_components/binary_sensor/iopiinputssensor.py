@@ -5,18 +5,15 @@ For more details about this board, please refer to the documentation at
 https://www.ablectronics.co.uk
 """
 import asyncio
-from datetime import timedelta
 import logging
 
 from homeassistant.helpers.entity import Entity
 from homeassistant.components.sensor import PLATFORM_SCHEMA
 
-import re
 import voluptuous as vol
 
 import homeassistant.helpers.config_validation as cv
 from homeassistant.const import CONF_NAME
-from homeassistant.util import Throttle
 
 _LOGGER = logging.getLogger(__name__)
 CONF_I2C_BUS = 'i2c_bus'
@@ -27,8 +24,6 @@ DEFAULT_I2C_BUS = 1
 DEFAULT_NAME = 'IO Pi Inputs'
 DEFAULT_I2C_AD1 = '0x20'
 DEFAULT_PULLUP = 1
-
-MIN_TIME_BETWEEN_UPDATES = timedelta(seconds=0.1)
 
 ATTR_PIN1 = 'pin1'
 ATTR_PIN2 = 'pin2'
@@ -82,7 +77,7 @@ class IOPiSensor(Entity):
         self._iopi = iopi
         self._port1 = None
         self._port2 = None
-        if (pullups == 1):
+        if pullups == 1:
             self._iopi.set_port_pullups(0, 0xFF)
             self._iopi.set_port_pullups(1, 0xFF)
         else:
@@ -113,22 +108,22 @@ class IOPiSensor(Entity):
     def device_state_attributes(self):
         """Return the state attributes of the device. """
         return {
-            ATTR_PIN1: self._iopi.checkbit(self._port1,0), 
-            ATTR_PIN2: self._iopi.checkbit(self._port1,1), 
-            ATTR_PIN3: self._iopi.checkbit(self._port1,2), 
-            ATTR_PIN4: self._iopi.checkbit(self._port1,3), 
-            ATTR_PIN5: self._iopi.checkbit(self._port1,4), 
-            ATTR_PIN6: self._iopi.checkbit(self._port1,5), 
-            ATTR_PIN7: self._iopi.checkbit(self._port1,6), 
-            ATTR_PIN8: self._iopi.checkbit(self._port1,7), 
-            ATTR_PIN9: self._iopi.checkbit(self._port2,0), 
-            ATTR_PIN10: self._iopi.checkbit(self._port2,1), 
-            ATTR_PIN11: self._iopi.checkbit(self._port2,2), 
-            ATTR_PIN12: self._iopi.checkbit(self._port2,3), 
-            ATTR_PIN13: self._iopi.checkbit(self._port2,4), 
-            ATTR_PIN14: self._iopi.checkbit(self._port2,5), 
-            ATTR_PIN15: self._iopi.checkbit(self._port2,6), 
-            ATTR_PIN16: self._iopi.checkbit(self._port2,7), 
+            ATTR_PIN1: self._iopi.checkbit(self._port1, 0),
+            ATTR_PIN2: self._iopi.checkbit(self._port1, 1),
+            ATTR_PIN3: self._iopi.checkbit(self._port1, 2),
+            ATTR_PIN4: self._iopi.checkbit(self._port1, 3),
+            ATTR_PIN5: self._iopi.checkbit(self._port1, 4),
+            ATTR_PIN6: self._iopi.checkbit(self._port1, 5),
+            ATTR_PIN7: self._iopi.checkbit(self._port1, 6),
+            ATTR_PIN8: self._iopi.checkbit(self._port1, 7),
+            ATTR_PIN9: self._iopi.checkbit(self._port2, 0),
+            ATTR_PIN10: self._iopi.checkbit(self._port2, 1),
+            ATTR_PIN11: self._iopi.checkbit(self._port2, 2),
+            ATTR_PIN12: self._iopi.checkbit(self._port2, 3),
+            ATTR_PIN13: self._iopi.checkbit(self._port2, 4),
+            ATTR_PIN14: self._iopi.checkbit(self._port2, 5),
+            ATTR_PIN15: self._iopi.checkbit(self._port2, 6),
+            ATTR_PIN16: self._iopi.checkbit(self._port2, 7),
         }
 
     @asyncio.coroutine
@@ -138,22 +133,22 @@ class IOPiSensor(Entity):
         self._port2 = self._iopi.read_port(1)
 
         self._state = {
-            ATTR_PIN1: self._iopi.checkbit(self._port1,0), 
-            ATTR_PIN2: self._iopi.checkbit(self._port1,1), 
-            ATTR_PIN3: self._iopi.checkbit(self._port1,2), 
-            ATTR_PIN4: self._iopi.checkbit(self._port1,3), 
-            ATTR_PIN5: self._iopi.checkbit(self._port1,4), 
-            ATTR_PIN6: self._iopi.checkbit(self._port1,5), 
-            ATTR_PIN7: self._iopi.checkbit(self._port1,6), 
-            ATTR_PIN8: self._iopi.checkbit(self._port1,7), 
-            ATTR_PIN9: self._iopi.checkbit(self._port2,0), 
-            ATTR_PIN10: self._iopi.checkbit(self._port2,1), 
-            ATTR_PIN11: self._iopi.checkbit(self._port2,2), 
-            ATTR_PIN12: self._iopi.checkbit(self._port2,3), 
-            ATTR_PIN13: self._iopi.checkbit(self._port2,4), 
-            ATTR_PIN14: self._iopi.checkbit(self._port2,5), 
-            ATTR_PIN15: self._iopi.checkbit(self._port2,6), 
-            ATTR_PIN16: self._iopi.checkbit(self._port2,7), 
+            ATTR_PIN1: self._iopi.checkbit(self._port1, 0),
+            ATTR_PIN2: self._iopi.checkbit(self._port1, 1),
+            ATTR_PIN3: self._iopi.checkbit(self._port1, 2),
+            ATTR_PIN4: self._iopi.checkbit(self._port1, 3),
+            ATTR_PIN5: self._iopi.checkbit(self._port1, 4),
+            ATTR_PIN6: self._iopi.checkbit(self._port1, 5),
+            ATTR_PIN7: self._iopi.checkbit(self._port1, 6),
+            ATTR_PIN8: self._iopi.checkbit(self._port1, 7),
+            ATTR_PIN9: self._iopi.checkbit(self._port2, 0),
+            ATTR_PIN10: self._iopi.checkbit(self._port2, 1),
+            ATTR_PIN11: self._iopi.checkbit(self._port2, 2),
+            ATTR_PIN12: self._iopi.checkbit(self._port2, 3),
+            ATTR_PIN13: self._iopi.checkbit(self._port2, 4),
+            ATTR_PIN14: self._iopi.checkbit(self._port2, 5),
+            ATTR_PIN15: self._iopi.checkbit(self._port2, 6),
+            ATTR_PIN16: self._iopi.checkbit(self._port2, 7),
         }
 
 
@@ -257,6 +252,8 @@ class IOPi(object):
             self.__ioaddress, self.GPIOB)
         self.__bus.write_byte_data(self.__ioaddress, self.IODIRA, 0xFF)
         self.__bus.write_byte_data(self.__ioaddress, self.IODIRB, 0xFF)
+        self.set_port_pullups(0, pullups)
+        self.set_port_pullups(1, pullups)
         return
 
     # local methods

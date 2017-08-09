@@ -68,7 +68,7 @@ class IOPISwitch(SwitchDevice):
         self.direction = 'out'
         self._iopi = iopi
         self._state = options.get(CONF_INITIAL)
-        if (self._state):
+        if self._state:
             self._iopi.write_pin(self._pin, 1)
 
     @property
