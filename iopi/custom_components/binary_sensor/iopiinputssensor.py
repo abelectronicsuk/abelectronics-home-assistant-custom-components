@@ -59,9 +59,11 @@ def async_setup_platform(hass, config, async_add_devices, discovery_info=None):
     import smbus
     i2caddress = config.get(CONF_I2C_ADDRESS1)
     pullups = config.get(CONF_PULLUP)
+    name = config.get(CONF_NAME)
     bus = smbus.SMBus(1)
+    
     iopi = IOPi(i2caddress, pullups, bus)
-    async_add_devices([IOPiSensor(iopi, pullups)])
+    async_add_devices([IOPiSensor(iopi,name, pullups)])
 
 
 class IOPiSensor(Entity):
@@ -70,13 +72,14 @@ class IOPiSensor(Entity):
     Control the IO on the IO Pi Plus and IO Pi Zero
     Representation of an IO Pi from abelectronics.co.uk.
     """
-    def __init__(self, iopi, pullups):
+    def __init__(self, iopi,name, pullups):
         """Initialize the sensor."""
         self._state = None
         self._data = None
         self._iopi = iopi
         self._port1 = None
         self._port2 = None
+        self._name = name
         if pullups == 1:
             self._iopi.set_port_pullups(0, 0xFF)
             self._iopi.set_port_pullups(1, 0xFF)
@@ -92,7 +95,7 @@ class IOPiSensor(Entity):
     @property
     def name(self):
         """Return the name of the sensor."""
-        return 'IOPi'
+        return self._name
 
     @property
     def state(self):
