@@ -5,7 +5,7 @@
     icon: mdi:home
     entities:
       - group.iopioutputs
-      - group.iopiinputs    
+      - group.iopiinputs
   
   mainview:
     view: no
@@ -32,7 +32,8 @@
       - binary_sensor.iopi_in14
       - binary_sensor.iopi_in15
       - binary_sensor.iopi_in16
-         
+
+      
   iopioutputs:
     view: no
     name: IOPi Outputs
