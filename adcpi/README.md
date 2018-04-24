@@ -1,12 +1,12 @@
-# Home Assistant component for ADC Pi Plus & Zero Raspberry Pi expansion boards
+# Home Assistant component for ADC Pi, ADC Pi Plus & Zero Raspberry Pi expansion boards
 
 Software interfaces for Home Assistant from [home-assistant.io](https://home-assistant.io/) to use with Raspbery Pi expanstion boards from [www.abelectronics.co.uk](https://www.abelectronics.co.uk/)
 
 Provides:
 
-- Functionality to read voltages from [ADC Pi Plus](https://www.abelectronics.co.uk/p/56/ADC-Pi-Plus-Raspberry-Pi-Analogue-to-Digital-converter) and [ADC Pi Zero](https://www.abelectronics.co.uk/p/69/ADC-Pi-Zero-Raspberry-Pi-Analogue-to-Digital-converter)
+- Functionality to read voltages from [ADC Pi](https://www.abelectronics.co.uk/p/69/ADC-Pi-Raspberry-Pi-Analogue-to-Digital-converter)
 
-## Installation for ADC Pi Plus and Zero
+## Installation for ADC Pi
 
 ```r
 Copy /custom_components/sensor/adcpi.py to /custom_components/sensor/adcpi.py in Home Assistant config directory

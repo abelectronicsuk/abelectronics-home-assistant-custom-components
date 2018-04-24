@@ -3,7 +3,7 @@
 Software interfaces for Home Assistant from [home-assistant.io](https://home-assistant.io/) to use with Raspbery Pi expanstion boards from [www.abelectronics.co.uk](https://www.abelectronics.co.uk/)
 
 ## ADC Pi Plus and ADC Pi Zero
-The **adcpi** directory contains sample code and interface custom component to allow Home Assistant to communicate with the ADC Pi Plus and ADC Pi Zero from AB Electronics UK.
+The **adcpi** directory contains sample code and interface custom component to allow Home Assistant to communicate with the ADC Pi, ADC Pi Plus and ADC Pi Zero from AB Electronics UK.
 
 ## IO Pi Plus and ADC Pi Zero Custom Components
 The **iopi** directory contains a binary_sensor component and sensor component which  communicates with the IO Pi Plus and IO Pi Zero from AB Electronics UK to use with Home Assistant and Hass.io releases.
