@@ -22,10 +22,12 @@ CONF_TYPE = 'digital'
 CONF_INITIAL = 'initial'
 CONF_I2C_BUS = 'i2c_bus'
 CONF_I2C_AD = 'i2c_address'
+CONF_INVERT_LOGIC = 'invert_logic'
 
 DEFAULT_I2C_BUS = 1
 DEFAULT_NAME = 'IOPi Switch'
 DEFAULT_I2C_AD = '0x21'
+DEFAULT_INVERT_LOGIC = False
 
 PIN_SCHEMA = vol.Schema({
     vol.Required(CONF_NAME): cv.string,
@@ -37,6 +39,7 @@ PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend({
         vol.Schema({cv.positive_int: PIN_SCHEMA}),
     vol.Optional(CONF_I2C_BUS, default=DEFAULT_I2C_BUS): vol.Coerce(int),
     vol.Optional(CONF_I2C_AD, default=DEFAULT_I2C_AD): vol.Coerce(int),
+    vol.Optional(CONF_INVERT_LOGIC, default=DEFAULT_INVERT_LOGIC): cv.boolean,
 })
 
 
@@ -46,6 +49,7 @@ def async_setup_platform(hass, config, async_add_devices, discovery_info=None):
     # Verify that Arduino board is present
     import smbus
     i2caddress = config.get(CONF_I2C_AD)
+    invert_logic = config.get(CONF_INVERT_LOGIC)
     bus = smbus.SMBus(1)
     iopi = IOPi(i2caddress, bus)
 
@@ -53,23 +57,26 @@ def async_setup_platform(hass, config, async_add_devices, discovery_info=None):
 
     switches = []
     for pinnum, pin in pins.items():
-        switches.append(IOPISwitch(pinnum, pin, bus, iopi))
+        switches.append(IOPISwitch(pinnum, pin, bus, iopi, invert_logic))
     async_add_devices(switches)
 
 
 class IOPISwitch(SwitchDevice):
     """Representation of an IOPi switch."""
 
-    def __init__(self, pin, options, bus, iopi):
+    def __init__(self, pin, options, bus, iopi, invert_logic):
         """Initialize the Pin."""
         self._pin = pin
         self._name = options.get(CONF_NAME)
         self.pin_type = CONF_TYPE
         self.direction = 'out'
         self._iopi = iopi
+        self._invert_logic = invert_logic
         self._state = options.get(CONF_INITIAL)
         if self._state:
-            self._iopi.write_pin(self._pin, 1)
+            self._iopi.write_pin(self._pin, 0 if self._invert_logic else 1)
+        else:
+            self._iopi.write_pin(self._pin, 1 if self._invert_logic else 0)
 
     @property
     def name(self):
@@ -84,12 +91,12 @@ class IOPISwitch(SwitchDevice):
     def turn_on(self):
         """Turn the pin to high/on."""
         self._state = True
-        self._iopi.write_pin(self._pin, 1)
+        self._iopi.write_pin(self._pin, 0 if self._invert_logic else 1)
 
     def turn_off(self):
         """Turn the pin to low/off."""
         self._state = False
-        self._iopi.write_pin(self._pin, 0)
+        self._iopi.write_pin(self._pin, 1 if self._invert_logic else 0)
 
 
 class IOPi(object):
