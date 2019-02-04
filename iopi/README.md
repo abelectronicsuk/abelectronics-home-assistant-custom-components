@@ -103,6 +103,7 @@ The IOPi output pin status can be configured with the following code either in c
 - platform: iopiswitch
   i2c_address: 0x21
   name: IOSwitches
+  invert_logic: False
   pins:
     1:
       name: Pin 1
@@ -143,6 +144,7 @@ The IOPi output pin status can be configured with the following code either in c
 
 * **name** (Required): Name that will be used in the sensor.
 * **i2c_address** (Required): The I2C address of the MCP23017 IC.
+* **invert_logic** (Optional): If `true`, inverts the output logic to ACTIVE LOW. Default: `false` (ACTIVE HIGH)
 * **pins** (Required): This section will contain a list of the pins you wish to use as outputs.
   * **pin number** (Required): The pin number that corresponds with the pin number on the IOPi Plus/Zero 
   * **name** (Required): Name that will be used in the switch.
