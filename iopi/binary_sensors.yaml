@@ -1,0 +1,58 @@
+- platform: iopiinputssensor
+  name: IOPiInputs
+  i2c_address: 0x20
+  pullup: 1
+  scan_interval: -50
+  
+
+
+- platform: template
+  sensors:
+    iopi_in1:
+      value_template: '{{states.binary_sensor.IOPiInputs.attributes.pin1 == 1}}'
+      friendly_name: 'IO input 1'
+    iopi_in2:
+      value_template: '{{states.binary_sensor.IOPiInputs.attributes.pin2 == 1}}'
+      friendly_name: 'IO input 2'  
+    iopi_in3:
+      value_template: '{{states.binary_sensor.IOPiInputs.attributes.pin3 == 1}}'
+      friendly_name: 'IO input 3'
+    iopi_in4:
+      value_template: '{{states.binary_sensor.IOPiInputs.attributes.pin4 == 1}}'
+      friendly_name: 'IO input 4'
+    iopi_in5:
+      value_template: '{{states.binary_sensor.IOPiInputs.attributes.pin5 == 1}}'
+      friendly_name: 'IO input 5'
+    iopi_in6:
+      value_template: '{{states.binary_sensor.IOPiInputs.attributes.pin6 == 1}}'
+      friendly_name: 'IO input 6' 
+    iopi_in7:
+      value_template: '{{states.binary_sensor.IOPiInputs.attributes.pin7 == 1}}'
+      friendly_name: 'IO input 7'  
+    iopi_in8:
+      value_template: '{{states.binary_sensor.IOPiInputs.attributes.pin8 == 1}}'
+      friendly_name: 'IO input 8' 
+    iopi_in9:
+      value_template: '{{states.binary_sensor.IOPiInputs.attributes.pin9 == 1}}'
+      friendly_name: 'IO input 9'
+    iopi_in10:
+      value_template: '{{states.binary_sensor.IOPiInputs.attributes.pin10 == 1}}'
+      friendly_name: 'IO input 10'  
+    iopi_in11:
+      value_template: '{{states.binary_sensor.IOPiInputs.attributes.pin11 == 1}}'
+      friendly_name: 'IO input 11'
+    iopi_in12:
+      value_template: '{{states.binary_sensor.IOPiInputs.attributes.pin12 == 1}}'
+      friendly_name: 'IO input 12'
+    iopi_in13:
+      value_template: '{{states.binary_sensor.IOPiInputs.attributes.pin13 == 1}}'
+      friendly_name: 'IO input 13'
+    iopi_in14:
+      value_template: '{{states.binary_sensor.IOPiInputs.attributes.pin14 == 1}}'
+      friendly_name: 'IO input 14' 
+    iopi_in15:
+      value_template: '{{states.binary_sensor.IOPiInputs.attributes.pin15 == 1}}'
+      friendly_name: 'IO input 15'  
+    iopi_in16:
+      value_template: '{{states.binary_sensor.IOPiInputs.attributes.pin16 == 1}}'
+      friendly_name: 'IO input 16'

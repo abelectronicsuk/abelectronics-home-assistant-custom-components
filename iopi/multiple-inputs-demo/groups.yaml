@@ -1,0 +1,58 @@
+# REPLACE HOME PAGE
+  default_view:
+    name: Home
+    view: yes
+    icon: mdi:home
+    entities:
+      - group.iopiinputs
+      - group.iopiinputs2
+          
+  
+  mainview:
+    view: no
+    name: Overview
+    
+  iopiinputs:
+    view: no
+    name: IOPi Inputs
+    control: hidden
+    entities:
+      - binary_sensor.iopi_in1
+      - binary_sensor.iopi_in2
+      - binary_sensor.iopi_in3
+      - binary_sensor.iopi_in4
+      - binary_sensor.iopi_in5
+      - binary_sensor.iopi_in6
+      - binary_sensor.iopi_in7
+      - binary_sensor.iopi_in8
+      - binary_sensor.iopi_in9
+      - binary_sensor.iopi_in10
+      - binary_sensor.iopi_in11
+      - binary_sensor.iopi_in12
+      - binary_sensor.iopi_in13
+      - binary_sensor.iopi_in14
+      - binary_sensor.iopi_in15
+      - binary_sensor.iopi_in16
+  
+  iopiinputs2:
+    view: no
+    name: IOPi Inputs 2
+    control: hidden
+    entities:
+      - binary_sensor.iopi_in21
+      - binary_sensor.iopi_in22
+      - binary_sensor.iopi_in23
+      - binary_sensor.iopi_in24
+      - binary_sensor.iopi_in25
+      - binary_sensor.iopi_in26
+      - binary_sensor.iopi_in27
+      - binary_sensor.iopi_in28
+      - binary_sensor.iopi_in29
+      - binary_sensor.iopi_in210
+      - binary_sensor.iopi_in211
+      - binary_sensor.iopi_in212
+      - binary_sensor.iopi_in213
+      - binary_sensor.iopi_in214
+      - binary_sensor.iopi_in215
+      - binary_sensor.iopi_in216
+

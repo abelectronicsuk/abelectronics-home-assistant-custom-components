@@ -1,0 +1,39 @@
+- platform: iopiswitch
+  i2c_address: 0x21
+  name: IOSwitches
+  invert_logic: False
+  pins:
+    1:
+      name: Pin 1
+      initial: True
+    2:
+      name: Pin 2
+      initial: True
+    3:
+      name: Pin 3
+    4:
+      name: Pin 4 
+    5:
+      name: Pin 5
+    6:
+      name: Pin 6
+    7:
+      name: Pin 7
+    8:
+      name: Pin 8
+    9:
+      name: Pin 9
+    10:
+      name: Pin 10
+    11:
+      name: Pin 11
+    12:
+      name: Pin 12 
+    13:
+      name: Pin 13
+    14:
+      name: Pin 14
+    15:
+      name: Pin 15
+    16:
+      name: Pin 16
