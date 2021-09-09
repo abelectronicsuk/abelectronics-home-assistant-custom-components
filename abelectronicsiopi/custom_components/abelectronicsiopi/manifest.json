@@ -1,7 +1,8 @@
 {
   "domain": "abelectronicsiopi",
   "name": "AB Electronics I/O Expander",
-  "documentation": "https://www.home-assistant.io/integrations/mcp23017",
+  "documentation": "https://github.com/abelectronicsuk/abelectronics-home-assistant-custom-components/tree/master/abelectronicsiopi",
+  "issue_tracker": "https://github.com/abelectronicsuk/abelectronics-home-assistant-custom-components/issues",
   "requirements": [],
   "codeowners": ["@abelectronics"],
   "iot_class": "local_polling",

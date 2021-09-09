@@ -1,0 +1,11 @@
+{
+  "domain": "abelectronicsadcpi",
+  "name": "abelectronicsadcpi",
+  "documentation": "https://github.com/abelectronicsuk/abelectronics-home-assistant-custom-components/tree/master/abelectronicsadcpi",
+  "issue_tracker": "https://github.com/abelectronicsuk/abelectronics-home-assistant-custom-components/issues",
+  "dependencies": [],
+  "codeowners": ["@abelectronicsuk"],
+  "version": "0.0.1",
+  "iot_class": "local_polling",
+  "requirements": []
+}
