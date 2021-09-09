@@ -1,4 +1,4 @@
-# Readme AB Electronics IOPi
+# Readme AB Electronics UK IOPi
 
 [![Project Maintenance][maintenance-shield]][user_profile]
 
@@ -7,7 +7,7 @@
 This custom component is designed to run the [IO Pi Plus](https://www.abelectronics.co.uk/p/54/io-pi-plus) and [IO Pi Zero](https://www.abelectronics.co.uk/p/71/io-pi-zero) Raspberry Pi expansion boards from AB Electronics UK
  with Home Assistant smart home software from https://www.home-assistant.io/ on a Raspberry Pi computer.
 
-The IO Pi boards use the Microchip mcp23017 IO expanders and this library is based on the Home Assistant mcp23017 integration modified to use our own IOPi Python library from https://www.abelectronics.co.uk/kb/article/23/python-library-and-demos
+The IO Pi boards use the Microchip MCP23017 IO expanders and this library is based on the Home Assistant MCP23017 integration modified to use our own IOPi Python library from https://www.abelectronics.co.uk/kb/article/23/python-library-and-demos
 
 
 This component will enable the following platforms
