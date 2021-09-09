@@ -1,22 +1,10 @@
-# Home Assistant components for Raspberry Pi expansion boards from ABElectronics UK
+# Home Assistant components for Raspberry Pi expansion boards from AB Electronics UK
 
 Software interfaces for Home Assistant from [home-assistant.io](https://home-assistant.io/) to use with Raspbery Pi expanstion boards from [www.abelectronics.co.uk](https://www.abelectronics.co.uk/)
 
-These components are only compatible with the Hassbian version of home assistant and do not work with Hass.io due to missing I2C support.
 
-## ADC Pi Plus and ADC Pi Zero
-The **adcpi** directory contains sample code and interface custom component to allow Home Assistant to communicate with the ADC Pi, ADC Pi Plus and ADC Pi Zero from AB Electronics UK.
-
-## IO Pi Plus and ADC Pi Zero Custom Components
-The **iopi** directory contains a binary_sensor component and sensor component which  communicates with the IO Pi Plus and IO Pi Zero from AB Electronics UK to use with Home Assistant and Hass.io releases.
-
-## IO Pi Plus and IO Pi Zero CLI C Interface
-The **iopi-using-cli** directory contains sample code and interface application to allow Home Assistant to communicate with the IO Pi Plus and IO Pi Zero from AB Electronics UK using the C IOPi CLI application.
-### Please note that the CLI C interface will not run on the Hass.io version due to permissions restrictions to the I2C port.
-
-
-## IO Pi CLI Application
-The **iopi-cli-app** directory contains a command line interface application written in C which  communicates with the IO Pi Plus and IO Pi Zero from AB Electronics UK. Full source code is provided.
+## IO Pi Plus and IO Pi Zero Custom Components
+The **abelectronicsiopi** directory contains a binary_sensor component and switch component which  communicates with the [IO Pi Plus](https://www.abelectronics.co.uk/p/54/io-pi-plus) and [IO Pi Zero](https://www.abelectronics.co.uk/p/71/io-pi-zero) Raspberry Pi expansion boards from AB Electronics UK to use with Home Assistant.
 
 ## License
 MIT
