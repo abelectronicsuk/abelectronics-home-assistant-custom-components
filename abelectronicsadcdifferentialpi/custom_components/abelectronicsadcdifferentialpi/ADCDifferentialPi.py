@@ -274,8 +274,6 @@ class ADCDifferentialPi(object):
             elif time.time() > timeout_time:
                 msg = 'read_raw: channel %i conversion timed out' % channel
                 raise TimeoutError(msg)
-            else:
-                time.sleep(0.00001)  # sleep for 10 microseconds
 
         self.__signbit = False
         raw = 0
