@@ -9,6 +9,8 @@ This custom component is designed to run the [IO Pi Plus](https://www.abelectron
 
 The IO Pi boards use the Microchip MCP23017 IO expanders and this library is based on the Home Assistant MCP23017 integration modified to use our own IOPi Python library from https://www.abelectronics.co.uk/kb/article/23/python-library-and-demos
 
+**Note:** Microchip recommends that pin 8 (GPA7) and pin 16 (GPB7) are used as outputs only.  This change was made for revision D MCP23017 chips manufactured after June 2020. See the [MCP23017 datasheet](https://www.abelectronics.co.uk/docs/pdf/microchip-mcp23017.pdf) for more information.
+
 
 This component will enable the following platforms
 
