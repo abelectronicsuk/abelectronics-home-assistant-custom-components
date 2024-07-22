@@ -27,7 +27,7 @@ PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend(
 def setup_platform(hass, config, add_entities, discovery_info=None):
     """Set up the abelectronicsiopi devices."""
     invert_logic = config.get(CONF_INVERT_LOGIC)
-    iopi = IOPi(config.get(CONF_I2C_ADDRESS), True)
+    iopi = IOPi(config.get(CONF_I2C_ADDRESS), False)
     switches = []
     pins = config.get(CONF_PINS)
     for pin_num, pin_name in pins.items():

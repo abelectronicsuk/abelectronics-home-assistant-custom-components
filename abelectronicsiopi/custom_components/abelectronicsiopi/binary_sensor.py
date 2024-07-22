@@ -32,7 +32,7 @@ def setup_platform(hass, config, add_devices, discovery_info=None):
     pull_mode = config[CONF_PULL_MODE]
     invert_logic = config[CONF_INVERT_LOGIC]
 
-    iopi = IOPi(config.get(CONF_I2C_ADDRESS), True)
+    iopi = IOPi(config.get(CONF_I2C_ADDRESS), False)
 
     binary_sensors = []
     pins = config[CONF_PINS]
