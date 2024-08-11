@@ -46,8 +46,10 @@ class abelectronicsiopiSwitch(ToggleEntity):
         self._name = pinname
         self.targetpin = pin
         self.iobus = bus
-        self.iobus.set_pin_direction(self.targetpin, 0)
-        self.iobus.write_pin(self.targetpin, 0)
+        pindir = self.iobus.get_pin_direction(self.targetpin)
+        if (pindir == 1):
+            self.iobus.set_pin_direction(self.targetpin, 0)
+        self._state = self.iobus.read_pin(self.targetpin)
         if invert_logic == True:
             self.iobus.invert_pin(self.targetpin, 1)
 
