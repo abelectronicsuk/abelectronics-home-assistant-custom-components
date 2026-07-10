@@ -1,7 +1,7 @@
 """Support for binary sensor using I2C abelectronicsiopi chip."""
 from custom_components.abelectronicsiopi.IOPi import IOPi
 import voluptuous as vol
-
+import logging
 from homeassistant.components.binary_sensor import PLATFORM_SCHEMA, BinarySensorEntity
 from homeassistant.const import DEVICE_DEFAULT_NAME
 import homeassistant.helpers.config_validation as cv
@@ -16,6 +16,8 @@ DEFAULT_I2C_ADDRESS = 0x20
 DEFAULT_PULL_MODE = True
 
 _SENSORS_SCHEMA = vol.Schema({cv.positive_int: cv.string})
+
+_LOGGER = logging.getLogger(__name__)
 
 PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend(
     {
@@ -45,28 +47,31 @@ def setup_platform(hass, config, add_devices, discovery_info=None):
 class abelectronicsiopiBinarySensor(BinarySensorEntity):
     """Represent a binary sensor that uses abelectronicsiopi."""
 
-    iobus = None
-    targetpin = None
+    io_bus = None
+    target_pin = None
     _state = False
 
-    def __init__(self, pinname, pin, pull_mode, invert_logic, bus):
+    def __init__(self, pin_name, pin, pull_mode, invert_logic, bus):
         """Initialize the pin."""
-        self._state = None
-        self._name = pinname
-        self.targetpin = pin
-        self.iobus = bus
+        try:
+            self._state = None
+            self._name = pin_name
+            self.target_pin = pin
+            self.io_bus = bus
 
-        if pull_mode:
-            self.iobus.set_pin_pullup(self.targetpin, 1)
-        else:
-            self.iobus.set_pin_pullup(self.targetpin, 0)
+            if pull_mode:
+                self.io_bus.set_pin_pullup(self.target_pin, 1)
+            else:
+                self.io_bus.set_pin_pullup(self.target_pin, 0)
 
-        self.iobus.set_pin_direction(self.targetpin, 1)
+            self.io_bus.set_pin_direction(self.target_pin, 1)
 
-        if invert_logic == True:
-            self.iobus.invert_pin(self.targetpin, 1)
-        else:
-           self.iobus.invert_pin(self.targetpin, 0) 
+            if invert_logic:
+                self.io_bus.invert_pin(self.target_pin, 1)
+            else:
+                self.io_bus.invert_pin(self.target_pin, 0)
+        except Exception as e:
+            _LOGGER.error(e)
 
     @property
     def name(self):
@@ -76,9 +81,15 @@ class abelectronicsiopiBinarySensor(BinarySensorEntity):
     @property
     def is_on(self):
         """Return the state of the entity."""
-        self._state = self.iobus.read_pin(self.targetpin)
+        try:
+            self._state = self.io_bus.read_pin(self.target_pin)
+        except Exception as e:
+            _LOGGER.error(e)
         return self._state
 
     def update(self):
         """Update the GPIO state."""
-        self._state = self.iobus.read_pin(self.targetpin)
+        try:
+            self._state = self.io_bus.read_pin(self.target_pin)
+        except Exception as e:
+            _LOGGER.error(e)
